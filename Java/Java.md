@@ -68,6 +68,34 @@ Java使用Unicode作为它的标准字符，这项特性使得Java的程序能�
 
 ## Java基础
 
+### 单根继承结构
+
+
+
+在Java中（事实上还包括除C++以外的所有OOP语言），所有的类最终都继承自单一的基类，这个终极基类的名字就是Object。 
+  单根继承结构的好处：
+
+在单根继承结构中所有对象都具有一个共用接口，所以它们归根到底都是相同的基本类型。
+单根继承结构保证所有对象都具备某些功能。
+
+单根继承结构使垃圾回收器的实现变得容易得多，而垃圾回收器正是相对C++的重要改进之一。由于所有对象都保证具有其类型信息，因此不会因无法确定对象的类型而陷入僵尸。这对于系统级操作（如异常处理）显得尤其重要，并且给编程带来了更大的灵活性。
+
+
+
+### 内部类和静态内部类
+
+Java普通内部类能访问其外围对象（enclosing object）的所有成员，而不需要任何特殊条件 。C++嵌套类的设计只是单纯的名字隐藏机制，与外围对象没有联系，也没有隐含的访问权。在Java中，当某个类创建一个内部类对象时，此内部类对象必定会秘密地捕获一个指向那个外围类的对象的引用。然后，在你访问此外围类的成员时，就是用那个引用来选择外围类的成员。这些细节是由编译器处理的。Java的迭代器复用了这个特性。
+
+内部类声明为`static`时，**不再包含外围对象的引用.this**，称为**嵌套类**（与C++嵌套类大致相似，只不过在C++中那些类不能访问私有成员，而在Java中可以访问）。 
+- 创建嵌套类，不需要外围对象。 
+- 不能从嵌套类的对象中访问**非静态的外围对象**。
+
+
+
+**闭包就是能够读取其他函数内部变量的函数。闭包可以理解成“定义在一个[函数](https://baike.baidu.com/item/%E5%87%BD%E6%95%B0/301912)内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。Java中的闭包：内部类，局部内部类，匿名内部类**
+
+
+
 1. 标识符：就是给类，接口，方法，变量等起名字时使用的字符序列
 
    由英文大小写字母、数字字符、$（美元符号）、_（下划线）组成
@@ -336,6 +364,32 @@ TERMINATED(终止)：该线程已经执行完毕。
 
 # 集合
 
+在Java中，**任何基本类型都不能作为类型参数**。因此**不能创建ArrayList<int> 或 HashMap<int, int>之类的东西**。但是可以利用自动包装机制和基本类型的包装器来解决，**自动包装机制将自动地实现int 到 Integer的双向转换**。
+
+```java
+// ListOfInt.java
+import java.util.*;
+public class ListOfInt{
+    public static void main(String[] args){
+        // 编译错误：意外的类型
+        // List<int> li = new ArrayList<int>();
+        // Map<int, Interger> m = new HashMap<int, Integer>();
+        List<Integer> li = new ArrayList<Integer>();
+        for(int i = 0; i < 5; i++){
+            li.add(i);      // int --> Integer
+        }
+        for(int i : li){    // Integer --> int
+            System.out.print(i + " ");
+        }
+    }
+}/* Output:
+0 1 2 3 4
+*/
+
+```
+
+
+
 ## 集合与数组
 
 **数组**（可以存储基本数据类型）是用来存现对象的一种容器，但是数组的长度固定，不适合在对象数量未知的情况下使用。
@@ -364,7 +418,9 @@ TERMINATED(终止)：该线程已经执行完毕。
 
 ![这里写图片描述](http://img.blog.csdn.net/20170905084554470?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTGl2ZW9yX0RpZQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-### list,set,map对比
+![img](http://www.superalloy.biz/Container.jpg)
+
+### List,Set,Map对比
 
 | 接口       | 子接口      | 是否有序           | 是否允许元素重复                                          |
 | ---------- | ----------- | ------------------ | --------------------------------------------------------- |
@@ -379,7 +435,7 @@ TERMINATED(终止)：该线程已经执行完毕。
 |            | HashMap     |                    | 否                                                        |
 |            | TreeMap     | 是（用二叉排序树） | 使用key-value来映射和存储数据，key必须唯一，value可以重复 |
 
-## list（有序、可重复）
+## List（有序、可重复）
 
 ### ArrayList
 
@@ -389,7 +445,13 @@ TERMINATED(终止)：该线程已经执行完毕。
 
 　　LinkedList是基于链表的，它是一个双向链表，每个节点维护了一个prev和next指针。同时对于这个链表，维护了first和last指针，first指向第一个元素，last指向最后一个元素。LinkedList是一个无序的链表，按照插入的先后顺序排序，不提供sort方法对内部元素排序。
 
-## Set（无序、不能重复）
+**ArrayList 和 LinkedList对比：**
+都可自动扩容。
+ArrayList底层是数组结构，即连续存储空间，所以读取元素快。因可自动扩容，所以可以把ArrayList当作“可自动扩充自身尺寸的数组”看待。
+LinkedList是链表结构，所以插入元素快。 
+LinkedList具有能够直接实现栈（Stack）的所有功能的方法，因此可以直接将LinkedList作为栈使用。LinkdedList也提供了支持队列（Queue）行为的方法，并且实现了Queue接口，所以也可以用作Queue。
+
+
 
 ### HashSet
 
@@ -487,7 +549,36 @@ hashtable是线程安全的,即hashtable的方法都提供了同步机制；hash
 
 
 
+## 异常 [详细参考](https://blog.csdn.net/zhanaolu4821/article/details/81012382)
 
+Java分为两类：Error和Exception
+
+1、Error（错误）：是程序中无法处理的错误，表示运行应用程序中出现了严重的错误。此类错误一般表示代码运行时JVM出现问题。通常有Virtual MachineError（虚拟机运行错误）、NoClassDefFoundError（类定义错误）等。比如说当jvm耗完可用内存时，将出现OutOfMemoryError。此类错误发生时，JVM将终止线程。
+
+这些错误是不可查的，非代码性错误。因此，当此类错误发生时，应用不应该去处理此类错误。
+
+2、Exception（异常）：程序本身可以捕获并且可以处理的异常。
+
+Exception又分为两类：运行时异常和编译异常。
+
+1、运行时异常(不受检异常)：RuntimeException类极其子类表示JVM在运行期间可能出现的错误。比如说试图使用空值对象的引用（NullPointerException）、数组下标越界（ArrayIndexOutBoundException）。此类异常属于不可查异常，一般是由程序逻辑错误引起的，在程序中可以选择捕获处理，也可以不处理。
+
+2、编译异常(受检异常)：Exception中除RuntimeException极其子类之外的异常。如果程序中出现此类异常，比如说IOException，必须对该异常进行处理，否则编译不通过。在程序中，通常不会自定义该类异常，而是直接使用系统提供的异常类。
+
+## 字符串
+
+**String对象是不可变的**
+
+### [String，StringBuilder，StringBuffer三者的区别](https://www.cnblogs.com/su-feng/p/6659064.html)
+
+1. 执行速度，**在这方面运行速度快慢为：StringBuilder > StringBuffer > String**
+2. **在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的**
+
+**String：适用于少量的字符串操作的情况**
+
+**StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况**
+
+**StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况**
 
 
 

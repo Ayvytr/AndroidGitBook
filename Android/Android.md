@@ -1,4 +1,4 @@
-# Android
+# Android [平台架构](https://developer.android.google.cn/guide/platform)
 
 ## 基本名词
 
@@ -11,9 +11,7 @@
 
 ### 生命周期
 
-![img](file:///C:/Users/Do/AppData/Local/Temp/enhtmlclip/activity_lifecycle.png)
-
-### 创建和使用
+### ![img](https://developer.android.google.cn/guide/components/images/activity_lifecycle.png)创建和使用
 
 继承Activity，或者ListActivity, AppCompatActivity, PreferenceActivity等，在清单文件注册，调用startActivity(new Intent(context, YourActivity.class)) 启动你的Activity, 调用finish()关闭Activity。可使用startActivityForResult 接收Activity结果
 

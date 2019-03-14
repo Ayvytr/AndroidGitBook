@@ -581,14 +581,3 @@ Exception又分为两类：运行时异常和编译异常。
 **StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况**
 
 
-
-## 更多问题
-
-
-
-## 面试题
-
-### [Java基础总结大全（实用）](https://www.cnblogs.com/javastu/p/5519569.html)
-
-### [Java基础总结！精华版！](https://blog.csdn.net/Song_JiangTao/article/details/80642188)
-

@@ -1,10 +1,8 @@
-# Android优化
+# Android内存优化
 
 ## 常见内存泄漏场景
 
-```java
 
-```
 
 ### 1. 需要手动关闭的对象没有关闭
 
@@ -340,4 +338,75 @@ Adapter没有使用缓存，主要指ListView
 IO，File， Cursor, ContentObserver, BroadCastRecelver
 
 
+
+
+
+# 常见内存问题
+
+## 内存泄漏
+
+* 单例
+* 静态变量
+* Handler
+* 匿名内部类
+* 资源使用完未关闭
+
+## 图片分辨率相关
+
+## 分辨率适配
+
+很多情况下图片所占的内存在整个App内存占用中会占大部分。我们知道可以通过将图片放到hdpi/xhdpi/xxhdpi等不同文件夹进行适配，通过xml android:background设置背景图片，或者通过BitmapFactory.decodeResource()方法，图片实际上默认情况下是会进行缩放的。在Java层实际调用的函数都是或者通过BitmapFactory里的decodeResourceStream函数
+
+```
+public static Bitmap decodeResourceStream(Resources res, TypedValue value,
+        InputStream is, Rect pad, Options opts) 
+{
+    if (opts == null)
+    {
+        opts = new Options();
+    }
+    if (opts.inDensity == 0 && value != null)
+    {
+       final int density = value.density;
+       if (density == TypedValue.DENSITY_DEFAULT)
+       {
+           opts.inDensity = DisplayMetrics.DENSITY_DEFAULT;
+       }
+       else if (density != TypedValue.DENSITY_NONE)
+       {
+           opts.inDensity = density;
+       }
+    }    
+    if (opts.inTargetDensity == 0 && res != null)
+    {
+        opts.inTargetDensity = res.getDisplayMetrics().densityDpi;
+    }    
+    return decodeStream(is, pad, opts);
+}
+```
+
+decodeResource在解析时会对Bitmap根据当前设备屏幕像素密度densityDpi的值进行缩放适配操作，使得解析出来的Bitmap与当前设备的分辨率匹配，达到一个最佳的显示效果，并且Bitmap的大小将比原始的大，可以参考下腾讯Bugly的详细分析Android 开发绕不过的坑：[你的 Bitmap 究竟占多大内存？](http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=403263974&idx=1&sn=b0315addbc47f3c38e65d9c633a12cd6&scene=21#wechat_redirect)
+
+
+
+## 图片压缩
+
+BitmapFactory 在解码图片时，可以带一个Options，有一些比较有用的功能，比如：
+
+- **inTargetDensity** 表示要被画出来时的目标像素密度
+- **inSampleSize** 这个值是一个int，当它小于1的时候，将会被当做1处理，如果大于1，那么就会按照比例（1 / inSampleSize）缩小bitmap的宽和高、降低分辨率，大于1时这个值将会被处置为2的倍数。例如，width=100，height=100，inSampleSize=2，那么就会将bitmap处理为，width=50，height=50，宽高降为1 / 2，像素数降为1 / 4
+- **inJustDecodeBounds** 字面意思就可以理解就是只解析图片的边界，有时如果只是为了获取图片的大小就可以用这个，而不必直接加载整张图片。
+- **inPreferredConfig** 默认会使用ARGB_8888,在这个模式下一个像素点将会占用4个byte,而对一些没有透明度要求或者图片质量要求不高的图片，可以使用RGB_565，一个像素只会占用2个byte，一下可以省下50%内存。
+- **inPurgeable**和**inInputShareable** 这两个需要一起使用，BitmapFactory.java的源码里面有注释，大致意思是表示在系统内存不足时是否可以回收这个bitmap，有点类似软引用，但是实际在5.0以后这两个属性已经被忽略，因为系统认为回收后再解码实际会反而可能导致性能问题
+- **inBitmap** 官方推荐使用的参数，表示重复利用图片内存，减少内存分配，在4.4以前只有相同大小的图片内存区域可以复用，4.4以后只要原有的图片比将要解码的图片大既可以复用了。
+
+
+
+## 缓存池
+
+现在很多图片加载组件都不仅仅是使用软引用或者弱引用了，实际上类似Glide 默认使用的事LruCache，因为软引用 弱引用都比较难以控制，使用LruCache可以实现比较精细的控制，而默认缓存池设置太大了会导致浪费内存，设置小了又会导致图片经常被回收，所以需要根据每个App的情况，以及设备的分辨率，内存计算出一个比较合理的初始值，可以参考Glide的做法。
+
+
+
+## 内存抖动： 频繁分配和回收
 

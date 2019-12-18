@@ -1,0 +1,26 @@
+{
+  "name": "androidgitbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ci": "^1.0.0",
+    "gitbook-plugin-copy-code-button": "^0.0.2",
+    "gitbook-plugin-prism": "^2.4.0",
+    "gitbook-plugin-theme-comscore": "^0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayvytr/AndroidGitBook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayvytr/AndroidGitBook/issues"
+  },
+  "homepage": "https://github.com/Ayvytr/AndroidGitBook#readme"
+}

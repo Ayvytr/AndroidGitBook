@@ -1,7 +1,5 @@
 # Java
 
-## [Java发展历程](Java的发展历程.md)
-
 ## Java特点
 
 1.简单 

@@ -22,8 +22,7 @@ on:
       target-branch: gh-pages
       verbose: true
       on:
-        branch: master    branches: 
-          - master
+        branch: master   
 
 jobs:
   build:

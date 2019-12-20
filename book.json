@@ -15,7 +15,6 @@
     "-sharing",
     "github-buttons",
     "donate",
-    "tbfed-pagefooter",
     "baidu-tongji",
     "anchor-navigation-ex",
     "pageview-count",
@@ -45,8 +44,8 @@
       "button": "打赏",
       "alipayText": "支付宝打赏",
       "wechatText": "微信打赏",
-      "alipay": "https://github.com/LiangJunrong/document-library/blob/master/public-repertory/img/seek-reward.jpg?raw=true",
-      "wechat": "https://github.com/LiangJunrong/document-library/blob/master/public-repertory/img/seek-reward.png?raw=true"
+      "alipay": "https://github.com/Ayvytr/GlobalConfig/blob/master/donate/alipay_ayvytr.jpg?raw=true",
+      "wechat": "https://github.com/Ayvytr/GlobalConfig/blob/master/donate/wechat_ayvytr.png?raw=true"
     },
     "prism": {
       "css": [
@@ -56,11 +55,6 @@
         "shell": "bash",
         "flow": "typescript"
       }
-    },
-    "tbfed-pagefooter": {
-      "copyright":"Copyright &copy jsliang.top 2019",
-      "modify_label": "该文件修订时间：",
-      "modify_format": "YYYY-MM-DD HH:mm:ss"
     },
     "baidu-tongji": {
       "token": ""
@@ -72,7 +66,6 @@
         "elements": [".gitbook-link"]
     },
     "sharing": {
-             "douban": true,
              "google": true,
              "qq": true,
              "qzone": true,

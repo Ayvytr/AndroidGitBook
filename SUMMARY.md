@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
+* [Android开发常见问题](Android开发常见问题.md)
 * [Android工具](Android工具/readme.md)
     * [Logcat](Android工具/logcat.md)
     * [ADB和ADB idea](Android工具/adb.md)
@@ -66,6 +67,4 @@
 * [Kotlin](Kotlin/readme.md)
     * [问题](Kotlin/问题/readme.md)
         * [Kotlin data class 和 Gson, @parcelize问题](Kotlin/问题/Kotlin data class 和 Gson, @parcelize问题.md)
-* [其他问题](其他问题/readme.md)
-    * [常见问题](其他问题/readme.md)
 

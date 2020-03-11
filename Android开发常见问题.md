@@ -508,6 +508,22 @@ Activity theme加上  **<item name="android:windowDisablePreview">true</item> **
 
 
 
+# 输入法遮挡输入框问题
+
+## 通用解决方法：AndroidManifest中Activity的windowSoftInputMode属性来调整
+
+## 通用解决方法无法解决，主要是自定义软键盘的情况
+
+ScrollView中的EditText被自定义输入法遮挡：
+
+ScrollView子控件最后增加一个空布局，比如Space，默认隐藏；界面显示后，计算Space高度：软键盘高度-输入框底部距离当前Activity窗口底部距离，>0时，就是有遮挡问题。
+
+监听自定义软键盘弹出/隐藏，或者输入框是否获得焦点，如果软键盘弹出/输入框获得焦点，显示Space，调用nestedScrollView.scrollTo(0, space.getHeight())，解决遮挡问题；软键盘隐藏时，隐藏Space
+
+
+
+
+
 # Kotlin 专题
 
 ## Kotlin data class 和 Gson, @parcelize问题

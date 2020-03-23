@@ -45,7 +45,6 @@
     * [View](源码分析/View.md)
     * [触摸事件分发机制](源码分析/触摸事件分发机制.md)
 * [逆向](逆向.md)
-* [MaterialDesign](MaterialDesign.md)
 * [硬件和传感器](硬件和传感器.md)
 * [多媒体](多媒体.md)
 * [OpenGL](OpenGL.md)

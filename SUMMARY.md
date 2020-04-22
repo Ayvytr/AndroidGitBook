@@ -57,6 +57,6 @@
     * [RxJava 2](第三方库/RxJava.md)
 * [测试](测试.md)
 * [Kotlin](Kotlin/readme.md)
-    * [问题](Kotlin/问题/readme.md)
-        * [Kotlin data class 和 Gson, @parcelize问题](Kotlin/问题/Kotlin data class 和 Gson, @parcelize问题.md)
+    * [Kotlin data class 和 Gson, @parcelize问题](Kotlin/Kotlin data class 和 Gson, @parcelize问题.md)
+    * [Kotlin中::class javaClass等真实类型](Kotlin/Kotlin中class javaClass等真实类型.md)
 

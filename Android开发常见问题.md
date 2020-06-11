@@ -10,6 +10,19 @@
 
 singleLine过时了，使用lines代替。maxLines=“1”不能限制文本只显示一行
 
+### string资源字符串自定义部分文本颜色
+
+```
+//string.xml中配置：
+<Data><![CDATA[染色<font color="#ff0000">%s</font>染色]]></Data>
+
+//TextView设置：
+TextView.setText(Html.fromHtml(getString(id, "format")))
+
+```
+
+
+
 ## EditText
 
 Java代码中调用了setFilters，会覆盖布局中maxLength属性，除非同时设置了LengthFilter
@@ -160,6 +173,118 @@ blocksDescendants：viewgroup会覆盖子类控件而直接获得焦点
 </LinearLayout>
 
 ```
+
+### LinearLayout嵌套RecyclerView的显示不全，滑动卡顿，夺取了焦点导致页面启动时RecyclerView上方布局没显示问题（真实情况应是ScrollView嵌套LinearLayout嵌套RecyclerView会出现）
+
+附上之前出问题的代码（问题已经改了）：
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <include layout="@layout/public_include_title_and_stausview" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:overScrollMode="never"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_quote_company"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/init_quote_top_notice"
+                    android:textColor="@color/public_color_FA960C"
+                    android:textSize="@dimen/public_font_16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_margin="@dimen/public_height_12dp"
+                    android:layout_width="match_parent"
+                    app:cardCornerRadius="10dp"
+                    app:cardBackgroundColor="@color/public_bg_3"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="18dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="@string/quote_company"
+                            android:textSize="@dimen/public_font_18sp"
+                            android:textColor="@color/public_text_main"
+                            android:layout_marginBottom="15dp"
+                            android:layout_height="wrap_content" />
+
+                        <include
+                            layout="@layout/layout_wabill_detail_line"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv"
+                            android:layout_width="match_parent"
+                            tools:listitem="@layout/item_select_quote"
+                            tools:itemCount="1"
+                            android:nestedScrollingEnabled="false"
+                            app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                            app:spanCount="1"
+                            android:layout_height="wrap_content" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_quote_order_info" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/public_bg_3"
+        android:padding="@dimen/public_pad_top_10dp">
+
+        <include layout="@layout/layout_btn_left_right" />
+    </RelativeLayout>
+
+</LinearLayout>
+```
+
+解决方案是在RecyclerView外包裹RelativeLayout。[原因：ScrollView嵌套RecyclerView解决以及原理详解 文中提到LinearLayout和RelativeLayout测量的不同](https://blog.csdn.net/a568478312/article/details/79881540)
+
+
 
 
 
@@ -505,6 +630,66 @@ Activity theme加上  **<item name="android:windowDisablePreview">true</item> **
         moveTaskToBack(true)
     }
 ```
+
+
+
+## Activity设置为Dialog样式
+
+方案：
+
+1. Activity Theme设置为：
+
+   不使用<item name="android:windowIsFloating">true</item>，而使用parent="@style/Theme.AppCompat.DayNight.Dialog"的原因是因为在页面上输入框会被软键盘遮住，软键盘不会顶起输入法
+
+   ```
+       <style name="ActivityDialogTheme" parent="@style/Theme.AppCompat.DayNight.Dialog">
+           <item name="android:windowFrame">@null</item> <!-- 无windowFrame -->
+           <!--        <item name="android:windowIsFloating">true</item>  &lt;!&ndash; 浮在activity之上 &ndash;&gt;-->
+           <item name="android:windowIsTranslucent">false</item>  <!-- 半透明 -->
+           <item name="android:windowNoTitle">true</item> <!-- 隐藏标题 -->
+           <item name="windowNoTitle">true</item> <!-- 隐藏标题 -->
+           <item name="android:background">@android:color/transparent</item>
+           <item name="android:windowBackground">@android:color/transparent</item> <!-- 设置系统给定的透明值 -->
+           <item name="android:backgroundDimEnabled">true</item>  <!-- 背景是否变暗-->
+       </style>
+   ```
+
+2. 布局：android:minWidth或者android:layout_width设置为很大的dp，防止宽度太小的问题
+
+   ```
+   <?xml version="1.0" encoding="utf-8"?>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       xmlns:android="http://schemas.android.com/apk/res/android">
+   
+       <LinearLayout
+           xmlns:android="http://schemas.android.com/apk/res/android"
+           android:layout_width="wrap_content"
+           android:minWidth="1000dp"
+           android:layout_height="326dp"
+           android:layout_marginLeft="15dp"
+           android:layout_marginRight="15dp"
+           android:orientation="vertical"
+           android:paddingLeft="15dp"
+           android:paddingRight="15dp"
+           android:background="@drawable/bg_hint_dialog_card">
+   
+           </LinearLayout>
+   
+       </LinearLayout>
+   
+   </LinearLayout>
+   
+   ```
+
+3. 防止点击空白处页面关闭，Activity中调用：
+
+   ```
+   setFinishOnTouchOutside(false);
+   ```
+
+这个方案也有不完美的地方，
 
 
 

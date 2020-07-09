@@ -4,6 +4,46 @@
 
 安卓常见问题，Bug等以及解答，欢迎大家更新和指正！！！
 
+# Android 系统
+
+## 防止OOM：
+
+8.0之后对内存使用方式做了修改，这两个操作就可以避免全部的oom：
+minSdk  26    ndk {abiFilters 'arm64-v8a'}
+
+
+
+## Android 9 Http请求：Cleartext HTTP traffic to ... not permitted
+
+* 方案1：改用https
+
+* targetSdkVersion 降到27以下
+
+* 更改网络安全配置（1）
+
+  1.在res文件夹下创建一个xml文件夹，然后创建一个network_security_config.xml文件，文件内容如下：
+
+  ```
+  <?xml version="1.0" encoding="utf-8"?>
+  <network-security-config>
+      <base-config cleartextTrafficPermitted="true" />
+  </network-security-config>
+  ```
+
+  
+
+  2.接着，在AndroidManifest.xml文件下的application标签增加以下属性：
+
+  ```
+  <application
+  	android:networkSecurityConfig="@xml/network_security_config"
+  />
+  ```
+
+* 更改网络安全配置（2）：在AndroidManifest.xml配置文件的<application>标签中直接插入android:usesCleartextTraffic="true"
+
+
+
 # View 问题
 
 ## TextView
@@ -689,7 +729,35 @@ Activity theme加上  **<item name="android:windowDisablePreview">true</item> **
    setFinishOnTouchOutside(false);
    ```
 
-这个方案也有不完美的地方，
+这个方案也有不完美的地方（应该算系统问题），布局较高，输入框靠下时，获取到焦点窗口上移时会被截断。但是不算大问题。
+
+
+
+## MainActivity打开新的Activity，因点击触发异常后（直接onCreate抛异常App会直接死掉），返回当前Activity时，Fragment重叠问题
+
+新Activity强退，导致MainActivity重新走了生命周期（onCreate-onStart-onResume）Activity保存了Fragment状态，在onCreate中savedInstanceState!=null，里头保存了Fragment状态：
+
+```
+android:support:fragments=android.support.v4.app.FragmentManagerState@ab76c10, android:fragments=android.app.FragmentManagerState@7661309}]
+```
+
+
+
+方案：
+
+```
+//方案1：super.onCreate(null); 传null解决
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        //解决Activity重建Fragment重叠问题
+        super.onCreate(null);
+    }
+//方案2：按需清除Bundle中FragmentManagerState
+```
+
+
+
+
 
 
 

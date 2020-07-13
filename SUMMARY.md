@@ -61,4 +61,5 @@
 * [Kotlin](Kotlin/readme.md)
     * [Kotlin data class 和 Gson, @parcelize问题](Kotlin/Kotlin data class 和 Gson, @parcelize问题.md)
     * [Kotlin中::class javaClass等真实类型](Kotlin/Kotlin中class javaClass等真实类型.md)
+    * [Kotlin注解](Kotlin/Kotlin注解.md)
 

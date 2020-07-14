@@ -11,36 +11,34 @@
 8.0之后对内存使用方式做了修改，这两个操作就可以避免全部的oom：
 minSdk  26    ndk {abiFilters 'arm64-v8a'}
 
-
-
 ## Android 9 Http请求：Cleartext HTTP traffic to ... not permitted
 
-* 方案1：改用https
+### 方案1：改用https
 
-* targetSdkVersion 降到27以下
+### 方案2：targetSdkVersion 降到27以下
 
-* 更改网络安全配置（1）
+### 方案3：更改网络安全配置（1）
 
-  1.在res文件夹下创建一个xml文件夹，然后创建一个network_security_config.xml文件，文件内容如下：
+1.在res文件夹下创建一个xml文件夹，然后创建一个network_security_config.xml文件，文件内容如下：
 
-  ```
-  <?xml version="1.0" encoding="utf-8"?>
-  <network-security-config>
-      <base-config cleartextTrafficPermitted="true" />
-  </network-security-config>
-  ```
+```
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
+```
 
-  
 
-  2.接着，在AndroidManifest.xml文件下的application标签增加以下属性：
 
-  ```
-  <application
-  	android:networkSecurityConfig="@xml/network_security_config"
-  />
-  ```
+2.接着，在AndroidManifest.xml文件下的application标签增加以下属性：
 
-* 更改网络安全配置（2）：在AndroidManifest.xml配置文件的<application>标签中直接插入android:usesCleartextTraffic="true"
+```
+<application
+	android:networkSecurityConfig="@xml/network_security_config"
+/>
+```
+
+### 方案4：更改网络安全配置（2）：直接在AndroidManifest.xml配置文件的<application>标签中直接插入android:usesCleartextTraffic="true"
 
 
 

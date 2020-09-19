@@ -63,7 +63,15 @@ TextView.setText(Html.fromHtml(getString(id, "format")))
 
 ## EditText
 
-Java代码中调用了setFilters，会覆盖布局中maxLength属性，除非同时设置了LengthFilter
+### Java代码中调用了setFilters，会覆盖布局中maxLength属性，除非同时设置了LengthFilter
+
+### InputType问题
+
+布局中inputType和xml中设置setInputType()使用有差异：例：xml中inputType=number，代码中不是设置TYPE_XXX_VARIATION_YYY，而是要设置TYPE_CLASS_XXX | TYPE_XXXX_VARAITION_YYY
+
+```
+比如xml中android:inputType="textPassword"，效果相当于et.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD | InputType.TYPE_CLASS_TEXT); 键盘和输入内容都限制了
+```
 
 ## CheckBox
 
@@ -772,6 +780,10 @@ ScrollView子控件最后增加一个空布局，比如Space，默认隐藏；�
 监听自定义软键盘弹出/隐藏，或者输入框是否获得焦点，如果软键盘弹出/输入框获得焦点，显示Space，调用nestedScrollView.scrollTo(0, space.getHeight())，解决遮挡问题；软键盘隐藏时，隐藏Space
 
 
+
+# Dialog宽度不够问题
+
+Dialog布局外层包裹一层RelativeLayout即可。
 
 
 

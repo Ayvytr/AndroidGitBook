@@ -1,0 +1,1274 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>BlockCanary · Android知识框架</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Ayvytr">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-solarizedlight.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="LeakCanary.html" />
+    
+    
+    <link rel="prev" href="第三方库.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Ayvytr","repo":"AndroidGitBook","type":"star","count":true,"size":"small"},{"user":"Ayvytr","width":"160","type":"follow","count":true,"size":"small"}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Android开发常见问题.html">
+            
+                <a href="../Android开发常见问题.html">
+            
+                    
+                    Android开发常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Android工具/readme.html">
+            
+                <a href="../Android工具/readme.html">
+            
+                    
+                    Android工具
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Android工具/logcat.html">
+            
+                <a href="../Android工具/logcat.html">
+            
+                    
+                    Logcat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Android工具/adb.html">
+            
+                <a href="../Android工具/adb.html">
+            
+                    
+                    ADB和ADB idea
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../四大组件/readme.html">
+            
+                <a href="../四大组件/readme.html">
+            
+                    
+                    四大组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../四大组件/Activity.html">
+            
+                <a href="../四大组件/Activity.html">
+            
+                    
+                    Activity
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../四大组件/Service.html">
+            
+                <a href="../四大组件/Service.html">
+            
+                    
+                    Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../四大组件/BroadcastReceiver.html">
+            
+                <a href="../四大组件/BroadcastReceiver.html">
+            
+                    
+                    BroadcastReceiver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../四大组件/ContentProvider.html">
+            
+                <a href="../四大组件/ContentProvider.html">
+            
+                    
+                    ContentProvider
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../基本组件/readme.html">
+            
+                <a href="../基本组件/readme.html">
+            
+                    
+                    基本组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../基本组件/Application.html">
+            
+                <a href="../基本组件/Application.html">
+            
+                    
+                    Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../基本组件/WebView.html">
+            
+                <a href="../基本组件/WebView.html">
+            
+                    
+                    WebView
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Intent.html">
+            
+                <a href="../Intent.html">
+            
+                    
+                    Intent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Fragment.html">
+            
+                <a href="../Fragment.html">
+            
+                    
+                    Fragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../View.html">
+            
+                <a href="../View.html">
+            
+                    
+                    View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../动画.html">
+            
+                <a href="../动画.html">
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../五大存储.html">
+            
+                <a href="../五大存储.html">
+            
+                    
+                    五大存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../优化/readme.html">
+            
+                <a href="../优化/readme.html">
+            
+                    
+                    优化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../优化/启动优化.html">
+            
+                <a href="../优化/启动优化.html">
+            
+                    
+                    启动优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../优化/Apk瘦身.html">
+            
+                <a href="../优化/Apk瘦身.html">
+            
+                    
+                    Apk瘦身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../优化/电量优化.html">
+            
+                <a href="../优化/电量优化.html">
+            
+                    
+                    电量优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../优化/布局优化.html">
+            
+                <a href="../优化/布局优化.html">
+            
+                    
+                    布局优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../优化/性能优化.html">
+            
+                <a href="../优化/性能优化.html">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../适配/readme.html">
+            
+                <a href="../适配/readme.html">
+            
+                    
+                    适配
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../适配/版本适配.html">
+            
+                <a href="../适配/版本适配.html">
+            
+                    
+                    版本适配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../适配/UI适配.html">
+            
+                <a href="../适配/UI适配.html">
+            
+                    
+                    UI适配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../适配/系统和机型适配.html">
+            
+                <a href="../适配/系统和机型适配.html">
+            
+                    
+                    系统和机型适配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../适配/暗黑模式.html">
+            
+                <a href="../适配/暗黑模式.html">
+            
+                    
+                    暗黑模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../打包.html">
+            
+                <a href="../打包.html">
+            
+                    
+                    打包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../国际化.html">
+            
+                <a href="../国际化.html">
+            
+                    
+                    国际化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../加固和混淆/readme.html">
+            
+                <a href="../加固和混淆/readme.html">
+            
+                    
+                    加固和混淆
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../加固和混淆/混淆.html">
+            
+                <a href="../加固和混淆/混淆.html">
+            
+                    
+                    混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../加固和混淆/加固.html">
+            
+                <a href="../加固和混淆/加固.html">
+            
+                    
+                    加固
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="../混合开发.html">
+            
+                <a href="../混合开发.html">
+            
+                    
+                    混合开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="../组件化.html">
+            
+                <a href="../组件化.html">
+            
+                    
+                    组件化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="../插件化.html">
+            
+                <a href="../插件化.html">
+            
+                    
+                    插件化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="../热修复.html">
+            
+                <a href="../热修复.html">
+            
+                    
+                    热修复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="../服务和机制.html">
+            
+                <a href="../服务和机制.html">
+            
+                    
+                    服务和机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="../源码分析/readme.html">
+            
+                <a href="../源码分析/readme.html">
+            
+                    
+                    源码分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.21.1" data-path="../源码分析/handler.html">
+            
+                <a href="../源码分析/handler.html">
+            
+                    
+                    Handler
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.2" data-path="../源码分析/LruCache.html">
+            
+                <a href="../源码分析/LruCache.html">
+            
+                    
+                    LruCache
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.3" data-path="../源码分析/View.html">
+            
+                <a href="../源码分析/View.html">
+            
+                    
+                    View
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.4" data-path="../源码分析/触摸事件分发机制.html">
+            
+                <a href="../源码分析/触摸事件分发机制.html">
+            
+                    
+                    触摸事件分发机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21.5" data-path="../源码分析/measureSpec.md">
+            
+                <span>
+            
+                    
+                    MeasureSpec
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="../逆向.html">
+            
+                <a href="../逆向.html">
+            
+                    
+                    逆向
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../硬件和传感器.html">
+            
+                <a href="../硬件和传感器.html">
+            
+                    
+                    硬件和传感器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="../多媒体.html">
+            
+                <a href="../多媒体.html">
+            
+                    
+                    多媒体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="../OpenGL.html">
+            
+                <a href="../OpenGL.html">
+            
+                    
+                    OpenGL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="../官方库/readme.html">
+            
+                <a href="../官方库/readme.html">
+            
+                    
+                    官方库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.26.1" data-path="../官方库/RecyclerView.html">
+            
+                <a href="../官方库/RecyclerView.html">
+            
+                    
+                    RecyclerView
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="第三方库.html">
+            
+                <a href="第三方库.html">
+            
+                    
+                    第三方库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.27.1" data-path="BlockCanary.html">
+            
+                <a href="BlockCanary.html">
+            
+                    
+                    BlockCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27.2" data-path="LeakCanary.html">
+            
+                <a href="LeakCanary.html">
+            
+                    
+                    LeakCanary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27.3" data-path="OkHttp.html">
+            
+                <a href="OkHttp.html">
+            
+                    
+                    OkHttp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27.4" data-path="RxJava.html">
+            
+                <a href="RxJava.html">
+            
+                    
+                    RxJava 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27.5" data-path="Glide.html">
+            
+                <a href="Glide.html">
+            
+                    
+                    Glide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="../测试.html">
+            
+                <a href="../测试.html">
+            
+                    
+                    测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="../Kotlin/readme.html">
+            
+                <a href="../Kotlin/readme.html">
+            
+                    
+                    Kotlin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.29.1" data-path="../Kotlin/Kotlin data class 和 Gson, @parcelize问题.html">
+            
+                <a href="../Kotlin/Kotlin data class 和 Gson, @parcelize问题.html">
+            
+                    
+                    Kotlin data class 和 Gson, @parcelize问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.2" data-path="../Kotlin/Kotlin中class javaClass等真实类型.html">
+            
+                <a href="../Kotlin/Kotlin中class javaClass等真实类型.html">
+            
+                    
+                    Kotlin中::class javaClass等真实类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29.3" data-path="../Kotlin/Kotlin注解.html">
+            
+                <a href="../Kotlin/Kotlin注解.html">
+            
+                    
+                    Kotlin注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >BlockCanary</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#blockcanary"><b></b>BlockCanary</a></li></ul></div><a href="#blockcanary" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="blockcanary"><a name="blockcanary" class="anchor-navigation-ex-anchor" href="#blockcanary"><i class="fa fa-link" aria-hidden="true"></i></a>BlockCanary</h1>
+<p>&#x539F;&#x7406;&#xFF1A;&#x5DE7;&#x5999;&#x7684;&#x5229;&#x7528;&#x4E86;Android&#x539F;&#x751F;Looper.loop&#x4E2D;&#x7684;&#x4E00;&#x4E2A;log&#x6253;&#x5370;&#x903B;&#x8F91;&#x3002;</p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">final</span> <span class="token class-name">Looper</span> me <span class="token operator">=</span> <span class="token function">myLooper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>me <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">RuntimeException</span><span class="token punctuation">(</span><span class="token string">&quot;No Looper; Looper.prepare() wasn&apos;t called on this thread.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">final</span> <span class="token class-name">MessageQueue</span> queue <span class="token operator">=</span> me<span class="token punctuation">.</span>mQueue<span class="token punctuation">;</span>
+
+        <span class="token comment">// Make sure the identity of this thread is that of the local process,</span>
+        <span class="token comment">// and keep track of what that identity token actually is.</span>
+        <span class="token class-name">Binder</span><span class="token punctuation">.</span><span class="token function">clearCallingIdentity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">final</span> <span class="token keyword">long</span> ident <span class="token operator">=</span> <span class="token class-name">Binder</span><span class="token punctuation">.</span><span class="token function">clearCallingIdentity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// Allow overriding a threshold with a system prop. e.g.</span>
+        <span class="token comment">// adb shell &apos;setprop log.looper.1000.main.slow 1 &amp;&amp; stop &amp;&amp; start&apos;</span>
+        <span class="token keyword">final</span> <span class="token keyword">int</span> thresholdOverride <span class="token operator">=</span>
+                <span class="token class-name">SystemProperties</span><span class="token punctuation">.</span><span class="token function">getInt</span><span class="token punctuation">(</span><span class="token string">&quot;log.looper.&quot;</span>
+                        <span class="token operator">+</span> <span class="token class-name">Process</span><span class="token punctuation">.</span><span class="token function">myUid</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;.&quot;</span>
+                        <span class="token operator">+</span> <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        <span class="token operator">+</span> <span class="token string">&quot;.slow&quot;</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">boolean</span> slowDeliveryDetected <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span><span class="token punctuation">;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Message</span> msg <span class="token operator">=</span> queue<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// might block</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>msg <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment">// No message indicates that the message queue is quitting.</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// This must be in a local variable, in case a UI event sets the logger</span>
+            <span class="token keyword">final</span> <span class="token class-name">Printer</span> logging <span class="token operator">=</span> me<span class="token punctuation">.</span>mLogging<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>logging <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                logging<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&gt;&gt;&gt;&gt;&gt; Dispatching to &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">.</span>target <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span>
+                        msg<span class="token punctuation">.</span>callback <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">.</span>what<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment">// Make sure the observer won&apos;t change while processing a transaction.</span>
+            <span class="token keyword">final</span> <span class="token class-name">Observer</span> observer <span class="token operator">=</span> sObserver<span class="token punctuation">;</span>
+
+            <span class="token keyword">final</span> <span class="token keyword">long</span> traceTag <span class="token operator">=</span> me<span class="token punctuation">.</span>mTraceTag<span class="token punctuation">;</span>
+            <span class="token keyword">long</span> slowDispatchThresholdMs <span class="token operator">=</span> me<span class="token punctuation">.</span>mSlowDispatchThresholdMs<span class="token punctuation">;</span>
+            <span class="token keyword">long</span> slowDeliveryThresholdMs <span class="token operator">=</span> me<span class="token punctuation">.</span>mSlowDeliveryThresholdMs<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>thresholdOverride <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                slowDispatchThresholdMs <span class="token operator">=</span> thresholdOverride<span class="token punctuation">;</span>
+                slowDeliveryThresholdMs <span class="token operator">=</span> thresholdOverride<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">final</span> <span class="token keyword">boolean</span> logSlowDelivery <span class="token operator">=</span> <span class="token punctuation">(</span>slowDeliveryThresholdMs <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>msg<span class="token punctuation">.</span>when <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">final</span> <span class="token keyword">boolean</span> logSlowDispatch <span class="token operator">=</span> <span class="token punctuation">(</span>slowDispatchThresholdMs <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">final</span> <span class="token keyword">boolean</span> needStartTime <span class="token operator">=</span> logSlowDelivery <span class="token operator">||</span> logSlowDispatch<span class="token punctuation">;</span>
+            <span class="token keyword">final</span> <span class="token keyword">boolean</span> needEndTime <span class="token operator">=</span> logSlowDispatch<span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>traceTag <span class="token operator">!=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token class-name">Trace</span><span class="token punctuation">.</span><span class="token function">isTagEnabled</span><span class="token punctuation">(</span>traceTag<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">Trace</span><span class="token punctuation">.</span><span class="token function">traceBegin</span><span class="token punctuation">(</span>traceTag<span class="token punctuation">,</span> msg<span class="token punctuation">.</span>target<span class="token punctuation">.</span><span class="token function">getTraceName</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">final</span> <span class="token keyword">long</span> dispatchStart <span class="token operator">=</span> needStartTime <span class="token operator">?</span> <span class="token class-name">SystemClock</span><span class="token punctuation">.</span><span class="token function">uptimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">final</span> <span class="token keyword">long</span> dispatchEnd<span class="token punctuation">;</span>
+            <span class="token class-name">Object</span> token <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>observer <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                token <span class="token operator">=</span> observer<span class="token punctuation">.</span><span class="token function">messageDispatchStarting</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">long</span> origWorkSource <span class="token operator">=</span> <span class="token class-name">ThreadLocalWorkSource</span><span class="token punctuation">.</span><span class="token function">setUid</span><span class="token punctuation">(</span>msg<span class="token punctuation">.</span>workSourceUid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                msg<span class="token punctuation">.</span>target<span class="token punctuation">.</span><span class="token function">dispatchMessage</span><span class="token punctuation">(</span>msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>observer <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    observer<span class="token punctuation">.</span><span class="token function">messageDispatched</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                dispatchEnd <span class="token operator">=</span> needEndTime <span class="token operator">?</span> <span class="token class-name">SystemClock</span><span class="token punctuation">.</span><span class="token function">uptimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> exception<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>observer <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    observer<span class="token punctuation">.</span><span class="token function">dispatchingThrewException</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> msg<span class="token punctuation">,</span> exception<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">throw</span> exception<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+                <span class="token class-name">ThreadLocalWorkSource</span><span class="token punctuation">.</span><span class="token function">restore</span><span class="token punctuation">(</span>origWorkSource<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>traceTag <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token class-name">Trace</span><span class="token punctuation">.</span><span class="token function">traceEnd</span><span class="token punctuation">(</span>traceTag<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>logSlowDelivery<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>slowDeliveryDetected<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>dispatchStart <span class="token operator">-</span> msg<span class="token punctuation">.</span>when<span class="token punctuation">)</span> <span class="token operator">&lt;=</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token class-name">Slog</span><span class="token punctuation">.</span><span class="token function">w</span><span class="token punctuation">(</span>TAG<span class="token punctuation">,</span> <span class="token string">&quot;Drained&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        slowDeliveryDetected <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">showSlowLog</span><span class="token punctuation">(</span>slowDeliveryThresholdMs<span class="token punctuation">,</span> msg<span class="token punctuation">.</span>when<span class="token punctuation">,</span> dispatchStart<span class="token punctuation">,</span> <span class="token string">&quot;delivery&quot;</span><span class="token punctuation">,</span>
+                            msg<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment">// Once we write a slow delivery log, suppress until the queue drains.</span>
+                        slowDeliveryDetected <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>logSlowDispatch<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">showSlowLog</span><span class="token punctuation">(</span>slowDispatchThresholdMs<span class="token punctuation">,</span> dispatchStart<span class="token punctuation">,</span> dispatchEnd<span class="token punctuation">,</span> <span class="token string">&quot;dispatch&quot;</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>logging <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                logging<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;&lt;&lt;&lt;&lt; Finished to &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">.</span>target <span class="token operator">+</span> <span class="token string">&quot; &quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">.</span>callback<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment">// Make sure that during the course of dispatching the</span>
+            <span class="token comment">// identity of the thread wasn&apos;t corrupted.</span>
+            <span class="token keyword">final</span> <span class="token keyword">long</span> newIdent <span class="token operator">=</span> <span class="token class-name">Binder</span><span class="token punctuation">.</span><span class="token function">clearCallingIdentity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>ident <span class="token operator">!=</span> newIdent<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">Log</span><span class="token punctuation">.</span><span class="token function">wtf</span><span class="token punctuation">(</span>TAG<span class="token punctuation">,</span> <span class="token string">&quot;Thread identity changed from 0x&quot;</span>
+                        <span class="token operator">+</span> <span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span>ident<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; to 0x&quot;</span>
+                        <span class="token operator">+</span> <span class="token class-name">Long</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span>newIdent<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; while dispatching to &quot;</span>
+                        <span class="token operator">+</span> msg<span class="token punctuation">.</span>target<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot; &quot;</span>
+                        <span class="token operator">+</span> msg<span class="token punctuation">.</span>callback <span class="token operator">+</span> <span class="token string">&quot; what=&quot;</span> <span class="token operator">+</span> msg<span class="token punctuation">.</span>what<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            msg<span class="token punctuation">.</span><span class="token function">recycleUnchecked</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+<p>&#x8FD9;&#x4E2A;log&#x6253;&#x5370;&#x903B;&#x8F91;&#x6B63;&#x662F;&#x5728;Message&#x6D88;&#x606F;&#x5206;&#x53D1;&#x524D;&#x540E;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x7684;&#x6027;&#x80FD;&#x5361;&#x987F;&#x95EE;&#x9898;&#x90FD;&#x662F;&#x5728;&#x8FD9;&#x91CC;&#x53D1;&#x751F;&#x7684;&#xFF0C;&#x76D1;&#x63A7;&#x8FD9;&#x4E24;&#x4E2A;&#x903B;&#x8F91;&#x4E4B;&#x95F4;&#x7684;&#x65F6;&#x95F4;&#x5DEE;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5F53;&#x524D;&#x4E3B;&#x7EBF;&#x7A0B;&#x7684;&#x5361;&#x987F;&#x72B6;&#x6001;&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x65F6;&#x5219;&#x83B7;&#x53D6;trace&#x4FE1;&#x606F;&#x5E76;&#x4E0A;&#x62A5;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5728;LooperMonitor&#x3002;</p>
+<ul>
+<li>&#x4F18;&#x70B9;
+&#x7075;&#x6D3B;&#x914D;&#x7F6E;&#x53EF;&#x76D1;&#x63A7;&#x5E38;&#x89C1;APP&#x5E94;&#x7528;&#x6027;&#x80FD;&#x4E5F;&#x53EF;&#x4F5C;&#x4E3A;&#x4E00;&#x90E8;&#x5206;&#x573A;&#x666F;&#x7684;ANR&#x76D1;&#x6D4B;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x51C6;&#x786E;&#x5B9A;&#x4F4D;ANR&#x548C;&#x8017;&#x65F6;&#x8C03;&#x7528;&#x6808;&#x3002;</li>
+<li>&#x7F3A;&#x70B9;
+BlockCanary&#x5E94;&#x7528;&#x5728;ANR&#x76D1;&#x63A7;&#x4E0A;&#x6709;&#x51E0;&#x4E2A;&#x6BD4;&#x8F83;&#x4E25;&#x91CD;&#x7684;&#x95EE;&#x9898;
+1&#x3001; &#x8C37;&#x6B4C;&#x5DF2;&#x7ECF;&#x660E;&#x786E;&#x6807;&#x6CE8;This must be in a local variable, in case a UI event sets the logger&#x8FD9;&#x4E2A;looger&#x5BF9;&#x8C61;&#x662F;&#x53EF;&#x4EE5;&#x88AB;&#x66F4;&#x6539;&#x7684;&#xFF0C;&#x5DF2;&#x7ECF;&#x6709;&#x5F00;&#x53D1;&#x8005;&#x9047;&#x5230;&#x5728;&#x4F7F;&#x7528;WebView&#x65F6;logger&#x88AB;set&#x4E3A;Null&#x5BFC;&#x81F4;BlockCanary&#x5931;&#x6548;&#xFF0C;&#x53EA;&#x80FD;&#x8BA9;BlockCanary&#x5728;WebView&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#x8C03;&#x7528;start&#x3002;
+2&#x3001; &#x5982;&#x679C;dispatchMessage&#x6267;&#x884C;&#x7684;&#x975E;&#x5E38;&#x4E45;&#x662F;&#x65E0;&#x6CD5;&#x89E6;&#x53D1;BlockCanary&#x7684;&#x903B;&#x8F91;&#x3002;&#x5728;Activity&#x4E2D;&#x91CD;&#x5199;dispatchTouchEvent&#x548C;dispatchKeyEvent&#xFF0C;&#x6A21;&#x62DF;&#x8017;&#x65F6;&#x64CD;&#x4F5C;&#xFF0C;&#x5F39;&#x51FA;ANR&#x544A;&#x8B66;&#xFF0C;&#x4F46;BlockCanary&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x53CD;&#x5E94;&#x3002;
+3&#x3001; &#x65E0;&#x6CD5;&#x76D1;&#x63A7;CPU&#x8D44;&#x6E90;&#x7D27;&#x5F20;&#x9020;&#x6210;&#x7CFB;&#x7EDF;&#x5361;&#x987F;&#xFF0C;&#x65E0;&#x6CD5;&#x54CD;&#x5E94;&#x7684;ANR&#x3002;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="第三方库.html" class="navigation navigation-prev " aria-label="Previous page: 第三方库">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="LeakCanary.html" class="navigation navigation-next " aria-label="Next page: LeakCanary">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"BlockCanary","level":"1.27.1","depth":2,"next":{"title":"LeakCanary","level":"1.27.2","depth":2,"path":"第三方库/LeakCanary.md","ref":"第三方库/LeakCanary.md","articles":[]},"previous":{"title":"第三方库","level":"1.27","depth":1,"path":"第三方库/第三方库.md","ref":"第三方库/第三方库.md","articles":[{"title":"BlockCanary","level":"1.27.1","depth":2,"path":"第三方库/BlockCanary.md","ref":"第三方库/BlockCanary.md","articles":[]},{"title":"LeakCanary","level":"1.27.2","depth":2,"path":"第三方库/LeakCanary.md","ref":"第三方库/LeakCanary.md","articles":[]},{"title":"OkHttp","level":"1.27.3","depth":2,"path":"第三方库/OkHttp.md","ref":"第三方库/OkHttp.md","articles":[]},{"title":"RxJava 2","level":"1.27.4","depth":2,"path":"第三方库/RxJava.md","ref":"第三方库/RxJava.md","articles":[]},{"title":"Glide","level":"1.27.5","depth":2,"path":"第三方库/Glide.md","ref":"第三方库/Glide.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["theme-comscore","prism","-highlight","copy-code-button","search-pro","-search","-lunr","expandable-chapters","splitter","-sharing","github-buttons","donate","baidu-tongji","anchor-navigation-ex","pageview-count","hide-element","sharing-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-solarizedlight.css"],"lang":{"shell":"bash","flow":"typescript"}},"baidu-tongji":{"url":"https://hm.baidu.com/hm.js","token":""},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"donate":{"alipay":"https://github.com/Ayvytr/GlobalConfig/blob/master/donate/alipay_ayvytr.jpg?raw=true","alipayText":"支付宝打赏","button":"打赏","title":"","wechat":"https://github.com/Ayvytr/GlobalConfig/blob/master/donate/wechat_ayvytr.png?raw=true","wechatText":"微信打赏"},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"Ayvytr","repo":"AndroidGitBook","type":"star","count":true,"size":"small"},{"user":"Ayvytr","width":"160","type":"follow","count":true,"size":"small"}]},"copy-code-button":{},"sharing":{"google":true,"qq":true,"qzone":true,"weibo":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Ayvytr","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android知识框架","language":"zh-hans","gitbook":"*"},"file":{"path":"第三方库/BlockCanary.md","mtime":"2020-09-19T11:29:37.661Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-19T11:30:37.189Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-baidu-tongji/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

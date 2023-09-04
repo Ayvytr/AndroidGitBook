@@ -144,6 +144,33 @@ protected void onDestroy() {
 
 
 
+## Java Js交互
+
+```java
+			webView.getSettings().setJavaScriptEnabled(true);
+//调用Js
+
+        webView.addJavascriptInterface(new CallJsClass(), "Js");
+        webView.loadUrl("Js:show()");
+//使用@JavascriptInterface注解来声明被Js调用的Java方法
+
+//        安卓4.4以上版本，可使用evaluateJavascript调用带返回值
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            webView.evaluateJavascript("sum(1, 2)", new ValueCallback<String>() {
+                @Override
+                public void onReceiveValue(String value) {
+
+                }
+            });
+        }
+//Js调用Java
+
+```
+
+
+
+
+
 ### 更多文章
 
 * [Android WebView 全面干货指南](https://www.jianshu.com/p/fd61e8f4049e)

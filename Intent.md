@@ -4,7 +4,7 @@
 
 Intent一般作为参数来使用，协助完成 Android各个组件之间的通讯。
 
-Intent主要包括7个属性：**Action（动作）**、**Data（数据）**、**Category（类别）**、**Type（数据类型）**、**Component（组件）**、**Extra（扩展信息）**、**Flag（标志位）**。其中最常用的是Action属性和Data属性。
+Intent主要包括7个属性：**Action（动作）**、**Data（数据）**、**Category（类别）**、**Type（数据类型）**、**Component（组件）**、**Extra（扩展信息）**、**Flag（标志位）**。其中最常用的是Action和Data。
 
 ## 表现形式：
 
@@ -54,7 +54,7 @@ startActivity(intent);
 
 ### 隐式Intent
 
-隐式，不明确指定启动哪个Activity，而是设置Action、Data、Category，让系统来筛选出合适的Activity。筛选是根据所有的``来筛选。
+隐式，不明确指定启动哪个Activity，而是设置Action、Data、Category，让系统来筛选出合适的Activity。
 
 ```java
 //打电话

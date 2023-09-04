@@ -18,6 +18,7 @@
 * [View](View.md)
 * [动画](动画.md)
 * [五大存储](五大存储.md)
+* [ANR](ANR.md)
 * [优化](优化/readme.md)
     * [启动优化](优化/启动优化.md)
     * [Apk瘦身](优化/Apk瘦身.md)

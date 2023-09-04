@@ -46,7 +46,7 @@ registerComponentCallbacks(new ComponentCallbacks2() {
 
 5. ### onConfigurationChanged 监听 应用程序 配置信息的改变，如屏幕旋转等
 
-6. ### registerActivityLifecycleCallbacks（） & unregisterActivityLifecycleCallbacks（）注册 / 注销对 应用程序内 所有`Activity`的生命周期监听
+6. ### registerActivityLifecycleCallbacks（） & unregisterActivityLifecycleCallbacks（）注册 / 注销对应用程序内所有`Activity`的生命周期监听
 
 7. ### onTerminate 应用程序结束时调用 但该方法只用于Android仿真机测试，在Android产品机是不会调用的
 

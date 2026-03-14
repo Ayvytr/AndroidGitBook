@@ -4,7 +4,7 @@
 
 在 Android 系统中，广播（Broadcast）是在组件之间传播数据的一种机制，这些组件可以位于不同的进程中，起到进程间通信的作用
 
-**BroadcastReceiver** 是对发送出来的 **Broadcast** 进行过滤、接受和响应的组件。首先将要发送的消息和用于过滤的信息（Action，Category）装入一个 **Intent** 对象，然后通过调用 **Context.sendBroadcast()** 、 **sendOrderBroadcast()** 方法把 Intent 对象以广播形式发送出去。 广播发送出去后，所以已注册的 BroadcastReceiver 会检查注册时的 **IntentFilter** 是否与发送的 Intent 相匹配，若匹配则会调用 BroadcastReceiver 的 **onReceiver()** 方法
+**BroadcastReceiver** 是对发送出来的 **Broadcast** 进行过滤、接受和响应的组件。首先将要发送的消息和用于过滤的信息（Action，Category）装入一个 **Intent** 对象，然后通过调用 **Context.sendBroadcast()** 、 **sendOrderBroadcast()** 方法把 Intent 对象以广播形式发送出去。 广播发送出去后，已注册的 BroadcastReceiver 会检查注册时的 **IntentFilter** 是否与发送的 Intent 相匹配，若匹配则会调用 BroadcastReceiver 的 **onReceiver()** 方法
 
 所以当我们定义一个 BroadcastReceiver 的时候，都需要实现 onReceiver() 方法。BroadcastReceiver 的生命周期很短，在执行 onReceiver() 方法时才有效，一旦执行完毕，该Receiver 的生命周期就结束了
 
@@ -13,7 +13,7 @@ Android中的广播分为两种类型，标准广播和有序广播
 - 标准广播
   标准广播是一种完全异步执行的广播，在广播发出后所有的广播接收器会在同一时间接收到这条广播，之间没有先后顺序，效率比较高，且无法被截断
 - 有序广播**Context.sendOrderedBroadcast**：
-  有序广播是一种同步执行的广播，在广播发出后同一时刻只有一个广播接收器能够接收到， 优先级高的广播接收器会优先接收，当优先级高的广播接收器的 onReceiver() 方法运行结束后，广播才会继续传递，且前面的广播接收器可以选择截断广播，这样后面的广播接收器就无法接收到这条广播了
+  有序广播是一种同步执行的广播，在广播发出后同一时刻只有一个广播接收器能够接收到， 优先级高的广播接收器会优先接收，当优先级高的广播接收器的 onReceiver() 方法运行结束后，广播才会继续传递，且前面的广播接收器可以选择截断广播，**roadcastReceiver.abortBroadcast**，这样后面的广播接收器就无法接收到这条广播了
 
 ### 注册方法
 

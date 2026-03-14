@@ -40,13 +40,7 @@
 
 ### 1. **OkHttpClient - 配置中心**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -89,13 +83,7 @@ public final class OkHttpClient implements Cloneable, Call.Factory {
 
 ### 2. **Call - 请求抽象**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -139,13 +127,7 @@ final class RealCall implements Call {
 
 ### 3. **Dispatcher - 调度器**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -193,14 +175,6 @@ public final class Dispatcher {
 
 ### 4. **Interceptor - 拦截器链**
 
-java
-
-java
-
-下载
-
-复制
-
 
 
 ```
@@ -239,13 +213,7 @@ public Response getResponseWithInterceptorChain() throws IOException {
 
 ### 1. **RetryAndFollowUpInterceptor - 重试和重定向**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -293,31 +261,17 @@ public final class RetryAndFollowUpInterceptor implements Interceptor {
 
 **处理场景**：
 
-- 
+- 网络异常重试（IOException）
 
-  网络异常重试（IOException）
+- HTTP 重定向（3xx 状态码）
 
-- 
+- 认证重试（401/407）
 
-  HTTP 重定向（3xx 状态码）
-
-- 
-
-  认证重试（401/407）
-
-- 
-
-  连接超时重试
+- 连接超时重试
 
 ### 2. **BridgeInterceptor - 桥接拦截器**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -374,14 +328,6 @@ public final class BridgeInterceptor implements Interceptor {
 ```
 
 ### 3. **CacheInterceptor - 缓存拦截器**
-
-java
-
-java
-
-下载
-
-复制
 
 
 
@@ -506,13 +452,7 @@ public final class CacheInterceptor implements Interceptor {
 
 ### 4. **ConnectInterceptor - 连接拦截器**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -534,31 +474,15 @@ public final class ConnectInterceptor implements Interceptor {
 
 **连接建立流程**：
 
-1. 
+1. 从连接池获取可用连接
 
-   从连接池获取可用连接
+2. 如果没有可用连接，创建新连接
 
-2. 
+3. 执行 TCP 握手和 TLS 握手
 
-   如果没有可用连接，创建新连接
-
-3. 
-
-   执行 TCP 握手和 TLS 握手
-
-4. 
-
-   建立 HTTP/2 连接（如果支持）
+4. 建立 HTTP/2 连接（如果支持）
 
 ### 5. **CallServerInterceptor - 服务调用拦截器**
-
-java
-
-java
-
-下载
-
-复制
 
 
 
@@ -673,14 +597,6 @@ public final class CallServerInterceptor implements Interceptor {
 
 ### 1. **RealConnection - 真实连接**
 
-java
-
-java
-
-下载
-
-复制
-
 
 
 ```
@@ -746,14 +662,6 @@ public final class RealConnection extends Http2Connection.Listener implements Co
 ```
 
 ### 2. **ConnectionPool - 连接池**
-
-java
-
-java
-
-下载
-
-复制
 
 
 
@@ -864,14 +772,6 @@ public final class ConnectionPool {
 
 ### 1. **Http2Connection - HTTP/2 连接**
 
-java
-
-java
-
-下载
-
-复制
-
 
 
 ```
@@ -923,13 +823,7 @@ public final class Http2Connection {
 
 ### 2. **头部压缩（HPACK）**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -989,14 +883,6 @@ public final class Hpack {
 ## 六、缓存实现
 
 ### 1. **Cache - 磁盘缓存**
-
-java
-
-java
-
-下载
-
-复制
 
 
 
@@ -1078,13 +964,7 @@ public final class Cache implements Closeable, Flushable {
 
 ### 2. **缓存策略算法**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -1194,14 +1074,6 @@ public final class CacheStrategy {
 
 ### 1. **建造者模式（Builder）**
 
-java
-
-java
-
-下载
-
-复制
-
 
 
 ```
@@ -1234,13 +1106,7 @@ public class OkHttpClient implements Cloneable, Call.Factory {
 
 ### 2. **工厂模式（Factory）**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -1260,13 +1126,7 @@ public interface Call {
 
 ### 3. **责任链模式（Chain of Responsibility）**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -1302,13 +1162,7 @@ public class RealInterceptorChain implements Interceptor.Chain {
 
 ### 4. **观察者模式（Observer）**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -1333,13 +1187,7 @@ class RealCall {
 
 ### 5. **享元模式（Flyweight）**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -1367,14 +1215,6 @@ public final class ConnectionPool {
 
 ### 1. **连接复用**
 
-java
-
-java
-
-下载
-
-复制
-
 
 
 ```
@@ -1399,14 +1239,6 @@ public boolean isEligible(Address address, Route route) {
 ```
 
 ### 2. **DNS 优化**
-
-java
-
-java
-
-下载
-
-复制
 
 
 
@@ -1453,13 +1285,7 @@ public class HttpDns implements Dns {
 
 ### 3. **请求体压缩**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -1493,13 +1319,7 @@ public final class BridgeInterceptor implements Interceptor {
 
 ### 4. **超时控制**
 
-java
 
-java
-
-下载
-
-复制
 
 
 
@@ -1536,10 +1356,6 @@ public class RealCall implements Call {
 
 
 
-
-
-复制
-
 ```
 1. 从使用开始 → 理解基本 API
 2. 跟踪同步请求流程 → RealCall.execute()
@@ -1553,11 +1369,7 @@ public class RealCall implements Call {
 
 ### 2. **调试技巧**
 
-kotlin
 
-kotlin
-
-复制
 
 ```
 // 1. 添加日志拦截器
@@ -1602,8 +1414,6 @@ class DebugInterceptor : Interceptor {
 
 
 
-复制
-
 ```
 1. RealCall.execute() - 请求入口
 2. Dispatcher.enqueue() - 异步请求调度
@@ -1614,5 +1424,3 @@ class DebugInterceptor : Interceptor {
 7. ConnectionPool.get() - 连接获取
 8. Http2Connection.newStream() - HTTP/2 流创建
 ```
-
-### 
